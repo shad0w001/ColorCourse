@@ -5,8 +5,6 @@ using UnityEngine;
 [CreateAssetMenu]
 public class DefaultAbility : Ability
 {
-    public string name = "Default Ability";
-
     // Start is called before the first frame update
     public override void Activate(GameObject player)
     {

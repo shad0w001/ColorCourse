@@ -18,6 +18,7 @@ public class PlayerController : MonoBehaviour
     private Vector3 direction;
     [SerializeField] float speed = 10f;
     private bool isMovementPressed;
+    public (Vector3, Quaternion) respawnPosition;
 
     //Sprinting Variables
     public bool isSprinting;
@@ -32,7 +33,7 @@ public class PlayerController : MonoBehaviour
     private float velocity;
 
     //Jump Variables
-    [SerializeField]public float jumpHeight = 4f;
+    [SerializeField]public float jumpHeight = 6f;
     private bool isJumpPressed;
 
     private void Awake()
@@ -49,12 +50,32 @@ public class PlayerController : MonoBehaviour
         playerInput.GameplayActions.Sprint.canceled += onSprintButtonPress;
     }
 
+    private void Start()
+    {
+        respawnPosition = (transform.position, transform.rotation);
+    }
+
+    public void Teleport(Vector3 position, Quaternion rotation)
+    {
+        transform.position = position;
+        transform.rotation = rotation;
+        Physics.SyncTransforms();
+        velocity = 0f;
+        respawnPosition = (position, rotation);
+    }
+    public void RespawnPlayer()
+    {
+        Teleport(respawnPosition.Item1, respawnPosition.Item2);
+    }
+
     private void Update()
     {
         ApplyMovement();
         ApplyAnimations();
         ApplyGravity();
     }
+
+    
     private void ApplyMovement()
     {
         UpdateMovementDirection();

@@ -5,7 +5,6 @@ using UnityEngine;
 [CreateAssetMenu]
 public class PotionThrowingAbility : Ability
 {
-    public string name = "Potion Ability";
     public float force = 40f;
     public GameObject potionPrefab;
     public override void Activate(GameObject player)
