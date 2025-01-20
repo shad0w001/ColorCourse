@@ -26,6 +26,7 @@ public class ThrowingPotion : MonoBehaviour
 
         if (hasExploded) return;  // Avoid multiple explosions
 
+        FindObjectOfType<AudioManager>().Play("Potion_Explosion");
         hasExploded = true;
         Explode();
     }

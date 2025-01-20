@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Bunny Leap Ability
   m_EditorClassIdentifier: 
   name: Bunny Jump
-  icon: {fileID: 21300000, guid: d264d50cfcd73ae4e8457bc7b526346a, type: 3}
+  icon: {fileID: 21300000, guid: 163a5ab6ff43ef74292c128a45a4998d, type: 3}
   cooldownTime: 10
   durationTime: 5
   jumpHeightMultiplier: 3

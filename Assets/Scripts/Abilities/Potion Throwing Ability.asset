@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Potion Throwing Ability
   m_EditorClassIdentifier: 
   name: Throwing Potion
-  icon: {fileID: 21300000, guid: a6d93892db919bf458773aa05472a238, type: 3}
+  icon: {fileID: 21300000, guid: dc574b47fa223a448938e153e04c1b3b, type: 3}
   cooldownTime: 2
   durationTime: 0
   name: Throwing Potion

@@ -10,6 +10,7 @@ public class BuunyLeapAbility : Ability
     private float baseJumpHeight;
     public override void Activate(GameObject player)
     {
+        FindObjectOfType<AudioManager>().Play("Rabbit_Hop_Acitve");
         controller = player.GetComponent<PlayerController>();
         baseJumpHeight = controller.jumpHeight;
         controller.jumpHeight = baseJumpHeight * jumpHeightMultiplier;

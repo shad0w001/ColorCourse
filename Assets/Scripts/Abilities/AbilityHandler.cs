@@ -68,6 +68,9 @@ public class AbilityHandler : MonoBehaviour
     private void SwapAbility()
     {
         currentAbility.Deactivate(gameObject);
+
+        FindObjectOfType<AudioManager>().Play("Ability_Swap");
+
         currentAbilityIndex = (currentAbilityIndex + 1) % abilities.Count;
         abilityState = AbilityState.ready;
         Debug.Log($"Swapped to ability: {currentAbility.name}");
